@@ -9,13 +9,15 @@ const mongoLiveURI = process.env.MONGOURL;
 
 const connectToMongo = async () => {
   // Connecting to database using connection string  
-  mongoose
+ await mongoose
     .connect( mongoLiveURI, 
         { 
             useNewUrlParser: true, 
             useUnifiedTopology: true 
            
         }
+        ,
+         { bufferMaxEntries: 0 }
     )
     .then(() => {
       console.log("MongoDB Database connected");

@@ -13,7 +13,9 @@ const bookMovieSchema = new Schema({
         D1: { type: Number, default:0 },
         D2: { type: Number, default:0 }
     }
-}, { timestamps: true })
+}, { timestamps: true }
+,{ bufferCommands: false }
+)
 
 // Registering the schema with mongoose model.
 module.exports = mongoose.model('bookmovieticket', bookMovieSchema);

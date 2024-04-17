@@ -25,7 +25,7 @@ const PostBooking = async (req, res) => {
 const getBooking = async (req, res) => {
     try {
         // find last booking of user 
-        const [data] = await BookingModel.find().sort({_id:-1}).limit(1).maxTimeMS(30000);
+        const [data] = await BookingModel.find().sort({_id:-1}).limit(1);
         
         if (!data) {
             // if no booking found this will be printed

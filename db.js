@@ -8,26 +8,20 @@ const mongoLiveURI = process.env.MONGOURL;
 
 
 const connectToMongo = async () => {
-  // Connecting to database using connection string  
-
- await mongoose
-    .connect( mongoLiveURI, 
-        { 
-           
-            useNewUrlParser: true, 
-          
-            useUnifiedTopology: true
-           
-        }
-        
-        
-    )
-    .then(() => {
-      console.log("MongoDB Database connected");
-    })
-    .catch((err) => {
-      console.log("Database connection error", err);
-    });
+  await mongoose.connect(mongoLiveURI, {
+   
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+     
+  })
+      .then(x => {
+          console.log(
+              `Connected to Mongo! Database name: "${x.connections[0].name}"`,
+          );
+      })
+      .catch(err => {
+          console.error('Error connecting to mongo', err);
+      });
+ 
 };
-
 exports.connection = connectToMongo;

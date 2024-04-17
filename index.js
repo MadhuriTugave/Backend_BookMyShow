@@ -13,17 +13,18 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use( cors() );
 
-// Connecting to database
-connection();
+
 
 // creating an api and seperating it.
 app.get("/", async (req, res) => {
     res.send("Made with Madhuri")
 })
+// Connecting to database
+connection();
+
 app.use("/api", bookingRoute);
 
 // listening backend on a port.
 const port = process.env.PORT || 8000;
 app.listen( port, () => console.log(`App listening on port ${port}!`) );
 
-module.exports = app;

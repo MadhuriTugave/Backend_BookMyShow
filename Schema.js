@@ -13,8 +13,7 @@ const bookMovieSchema = new Schema({
         D1: { type: Number, default:0 },
         D2: { type: Number, default:0 }
     }
-}, { timestamps: true ,
-    bufferCommands: false
+}, { timestamps: true 
    }
 
 )

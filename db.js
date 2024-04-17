@@ -10,7 +10,7 @@ const mongoLiveURI = process.env.MONGOURL;
 const connectToMongo = async () => {
   // Connecting to database using connection string  
   mongoose.set('bufferCommands', false)
-  mongoose
+ await  mongoose
     .connect( mongoLiveURI, 
         { 
             useNewUrlParser: true, 

@@ -15,7 +15,7 @@ const connectToMongo = async () => {
         { 
             useNewUrlParser: true, 
             useUnifiedTopology: true , 
-            bufferCommands: true 
+         
            
         }
         

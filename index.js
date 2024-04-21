@@ -21,7 +21,7 @@ app.get("/", async (req, res) => {
 })
 // Connecting to database
 
-connection();
+// connection();
 
 const bookingRoute = require("./Routes/AllRoutes.js")
 app.use("/api", bookingRoute);

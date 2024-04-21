@@ -8,12 +8,8 @@ const mongoLiveURI = process.env.MONGOURL;
 
 
 const connectToMongo = async () => {
-  await mongoose.connect(mongoLiveURI, {
-   
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-     
-  })
+    const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true} };
+  await mongoose.connect(mongoLiveURI, clientOptions)
       .then(x => {
           console.log(
               `Connected to Mongo! Database name: "${x.connections[0].name}"`,

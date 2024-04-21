@@ -5,7 +5,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
-const bookingRoute = require("./Routes/AllRoutes.js")
+
 
 // app.use( bodyParser.urlencoded({ extended: true }) );
 // app.use( bodyParser.json() );
@@ -20,8 +20,11 @@ app.get("/", async (req, res) => {
     res.send("Made with Madhuri")
 })
 // Connecting to database
-connection();
-
+const database= async()=>{
+    await connection();
+}
+database();
+const bookingRoute = require("./Routes/AllRoutes.js")
 app.use("/api", bookingRoute);
 
 // listening backend on a port.

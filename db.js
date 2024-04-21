@@ -4,9 +4,6 @@ require("dotenv").config();
 
 
 const mongoLiveURI = process.env.MONGOURL;
-
-
-
 const connectToMongo = async () => {
     const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true} };
   await mongoose.connect(mongoLiveURI, clientOptions)

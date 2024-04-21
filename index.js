@@ -20,12 +20,12 @@ app.get("/", async (req, res) => {
     res.send("Made with Madhuri")
 })
 // Connecting to database
-const database= async()=>{
-    await connection();
-}
-database();
+
+connection();
+
 const bookingRoute = require("./Routes/AllRoutes.js")
 app.use("/api", bookingRoute);
+connection();
 
 // listening backend on a port.
 const port = process.env.PORT || 8000;

@@ -1,5 +1,5 @@
 const BookingModel = require("../Schema")
-
+// console.log(BookingModel);
 const PostBooking = async (req, res) => {
     try {
         const { movie, slot, seats } = req.body;

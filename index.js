@@ -21,11 +21,11 @@ app.get("/", async (req, res) => {
 })
 // Connecting to database
 
-// connection();
+connection();
 
 const bookingRoute = require("./Routes/AllRoutes.js")
 app.use("/api", bookingRoute);
-connection();
+
 
 // listening backend on a port.
 const port = process.env.PORT || 8000;

@@ -27,7 +27,7 @@ const getBooking = async (req, res) => {
         // find last booking of user 
         const [data] = await BookingModel.find().sort({_id:-1}).limit(1)
         
-        if (data.length == 0) {
+        if (!data) {
             // if no booking found this will be printed
             return res.status(200).json({
                 message:"No previous Booking found!",

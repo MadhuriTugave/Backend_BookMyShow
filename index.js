@@ -17,7 +17,8 @@ app.use( cors() );
 
 // creating an api and seperating it.
 app.get("/", async (req, res) => {
-    res.send("Made with Madhuri")
+    res.send(`Welcome to BookMyShow Api !!!!
+    you can check Api using /api/booking endPoint`)
 })
 // Connecting to database
 
